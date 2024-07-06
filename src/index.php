@@ -10,5 +10,5 @@ echo "type number 2:";
 $number2 = fgets(STDIN);
 echo "type number 3:";
 $number3 = fgets(STDIN);
-$average  = ($number1 + $number2 + $number3) / 3 ;
+$average  = ((int)$number1 + (int)$number2 + (int)$number3) / 3 ;
 echo $average.PHP_EOL;
