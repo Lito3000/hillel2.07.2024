@@ -30,9 +30,12 @@ echo $a . "\n";
 echo $b . PHP_EOL;
 
 $text = 'red';
-$text .= 'blue';
-$text = $text . 'blue';
-echo $text . PHP_EOL;
-$r = fgets(STDIN);
-echo $r;
-echo $r;
+//$text .= 'blue';
+//$text = $text . 'blue';
+//echo $text . PHP_EOL;
+//$r = fgets(STDIN);
+//echo $r;
+//echo $r;
+$r = true;
+echo $text && $r;
+var_dump($text === $r);
