@@ -11,7 +11,7 @@ $y = 5;
 $result2 = ($x or $y);
 var_dump($result2);
 
-$number1 = "45";
+$number1 = '45';
 $string_to_numb = (int)$number1;
 var_dump($string_to_numb);
 
