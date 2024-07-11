@@ -35,7 +35,6 @@ if($status ===1){
     echo 'white'.PHP_EOL;
 }
 
-
 switch ($status) {
     case 1:
         echo 'green' . PHP_EOL;
