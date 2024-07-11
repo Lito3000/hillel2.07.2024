@@ -17,25 +17,25 @@
 //- 6 - black
 //
 //Всі інші значення мають виводити white
-$status = 5;
+$value = 3;
 
-if($status ===1){
+if($value ===1){
     echo 'green'.PHP_EOL;
-}else if ($status === 2){
+}else if ($value === 2){
     echo 'red'.PHP_EOL;
-}else if ($status === 3){
+}else if ($value === 3){
     echo 'blue'.PHP_EOL;
-}else if ($status === 4){
+}else if ($value === 4){
     echo 'brown'.PHP_EOL;
-}else if ($status === 5){
+}else if ($value === 5){
     echo 'violet'.PHP_EOL;
-}else if ($status === 6){
+}else if ($value === 6){
     echo 'black'.PHP_EOL;
 }else{
     echo 'white'.PHP_EOL;
 }
 
-switch ($status) {
+switch ($value) {
     case 1:
         echo 'green' . PHP_EOL;
         break;
@@ -58,7 +58,7 @@ switch ($status) {
         echo 'white' . PHP_EOL;
 }
 
-$result = match($status){
+$result = match($value){
     1 => 'green' . PHP_EOL,
     2 => 'red' . PHP_EOL,
     3 => 'blue' . PHP_EOL,
