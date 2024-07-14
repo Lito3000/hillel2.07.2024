@@ -68,3 +68,11 @@ $result = match($value){
     default => 'white' . PHP_EOL,
 };
 echo $result;
+
+
+function rtp ($y)
+{
+    return $y;
+//    echo $y;
+}
+echo rtp(4);
