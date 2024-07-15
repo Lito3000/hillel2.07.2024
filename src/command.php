@@ -5,30 +5,30 @@ declare(strict_types=1);
 
 
 //------------------------------------------------------------------------------------------------------------------------------
-$radius = 9;
+$number = 9;
 $pow = 2;
-function square(float $radius,float $degree):float
+function square(float $number,float $degree):float
 {
-return pi() *  pow($radius,$degree);
+return pi() *  pow($number,$degree);
 }
-echo square($radius,$pow).PHP_EOL;
+echo square($number,$pow).PHP_EOL;
 
 //------------------------------------------------------------------------------------------------------------------------------
 
-function degree1(float $radius,float $degree):float
+function degree1(float $number,float $degree):float
 {
- return   pow($radius,$degree);
+ return   pow($number,$degree);
 }
 
-$result = degree1($radius,$pow);
+$result = degree1($number,$pow);
 echo $result.PHP_EOL;
 
 //------------------------------------------------------------------------------------------------------------------------------
-$result = 0;
-function degree2(float &$b,float $radius,float $degree):void
+
+function degree2(float &$number,float $degree):void
 {
-    $b = pow($radius,$degree);
+    $number = pow($number,$degree);
 }
-echo $result.PHP_EOL;
-degree2($result,$radius,$pow);
-echo $result.PHP_EOL;
+echo $number.PHP_EOL;
+degree2($number,$pow);
+echo $number.PHP_EOL;
