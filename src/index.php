@@ -6,14 +6,15 @@ function myCallBack(int $numberInt1, int $numberInt2, ?Closure $function1 = null
 {
 
     if ($function1 !== null) {
-        $function1($numberInt1, $numberInt2);
+        $result2 = $numberInt1 * $numberInt2;
+        $function1($result2);
     }
-    return $numberInt1 * $numberInt2;
+    return $numberInt1 + $numberInt2;
 }
 
 
-$filterFunc = function (int $number1, int $number2): void {
-    echo ($number1 * $number2) . PHP_EOL;
+$filterFunc = function (int $number1): void {
+    echo $number1 . PHP_EOL;
 
 };
-echo myCallBack($elem1, $elem2,$filterFunc).PHP_EOL;
+myCallBack($elem1, $elem2,$filterFunc);
