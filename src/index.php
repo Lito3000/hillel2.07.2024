@@ -15,4 +15,4 @@ function myCallBack(int $numberInt1, int $numberInt2, ?Closure $function1 = null
 $filterFunc = function (int $number1):void {
     echo $number1.PHP_EOL;
 };
-echo myCallBack($elem1, $elem2);
+myCallBack($elem1, $elem2,$filterFunc);
