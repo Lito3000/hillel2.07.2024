@@ -1,7 +1,7 @@
 <?php
 
 
-//var_dump(12<10);
+
 function elem(int $a):void
 {
     $i = 1;
