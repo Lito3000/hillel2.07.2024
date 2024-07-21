@@ -4,7 +4,7 @@ function randArray(int $length = 10, int $min = 1, int $max = 10): array
     $array = [];
     for ($i = 0; $i < $length; $i++) {
         $array[] = rand($min, $max);
-    };
+    }
     return $array;
 }
 
