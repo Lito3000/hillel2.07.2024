@@ -1,38 +1,41 @@
 <?php
 
-//$arr = [3,7,6];
-//for ($i = 0; $i < count($arr); $i++) {
-//    echo $arr[$i] . "\n";
-//}
-echo "Hello command.php\n";
-$varible = "Hi\n";
-echo "hello $varible";
-var_dump($varible);
-echo 'hello2' . $varible;
-PHP_INT_MAX;
-//echo PHP_INT_MAX;
-$js = isset($varible);
-var_dump($js);
-unset($js);
-var_dump($js);
-$integ = '4';
-$integ = (int)'4';
-var_dump($integ);
-$num2 = intval('4');
-var_dump($num2);
-$a = 5;
-$a = $a +7;
-$b = $a;
-$a = $a + 1;
 
-//echo "$a\n";
-echo $a . "\n";
-echo $b . PHP_EOL;
+//var_dump(12<10);
+function elem(int $a):void
+{
+    $i = 1;
+    while ($i <= $a) {
+        echo $i . "\n";
+        $i++;
+    }
+}
 
-$text = 'red';
-$text .= 'blue';
-$text = $text . 'blue';
-echo $text . PHP_EOL;
-$r = fgets(STDIN);
-echo $r;
-echo $r;
+elem(10);
+//----------------------------------------------------------------------------------------------------------------------------
+function FactorialNum(int $num):void
+{
+    $i = 1;
+    $sum = 1;
+    while ($i <= $num) {
+        $sum = $sum * $i;
+        echo $sum.PHP_EOL;
+        $i = $i + 1;
+    }
+}
+
+FactorialNum(5);
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+function numberDoubles(int $a):void
+{
+    $i = 1;
+    while ($i <= $a) {
+        if ($i % 2 === 0) {
+            echo $i."\n";
+        }
+        $i++;
+    }
+}
+numberDoubles(20);
