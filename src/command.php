@@ -13,18 +13,19 @@ function elem(int $a):void
 
 elem(10);
 //----------------------------------------------------------------------------------------------------------------------------
-function FactorialNum(int $num):void
+function FactorialNum(int $num):int
 {
     $i = 1;
     $sum = 1;
     while ($i <= $num) {
         $sum = $sum * $i;
-        echo $sum.PHP_EOL;
         $i = $i + 1;
     }
+    return $sum;
 }
 
-FactorialNum(5);
+$result = FactorialNum(5);
+echo $result.PHP_EOL;
 //-----------------------------------------------------------------------------------------------------------------------------
 
 
