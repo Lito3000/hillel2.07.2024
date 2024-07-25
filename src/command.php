@@ -34,16 +34,7 @@ echo $resultMin . PHP_EOL;
 //----------------------------------------------------------------------------------------------------------------------------------
 function numberSort(&$sort): void
 {
-    function cmp($a, $b): int
-    {
-        if ($a == $b) {
-            return 0;
-        }
-        return ($a < $b) ? -1 : 1;
-    }
-
-    usort($sort, "cmp");
-
+    usort($sort, fn($a, $b) => $a <=> $b);
 }
 
 numberSort($mySort);
