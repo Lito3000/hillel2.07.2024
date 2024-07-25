@@ -1,38 +1,123 @@
 <?php
-
-//$arr = [3,7,6];
-//for ($i = 0; $i < count($arr); $i++) {
-//    echo $arr[$i] . "\n";
+//function getUsers7(&$users7): void
+//{
+//    $users7 = [
+//        ['id' => 1, 'name' => 'John Doe', 'email' => 'john@doe.com'],
+//        ['id' => 2, 'name' => 'Martin', 'email' => 'martin@doe.com'],
+//        ['id' => 3, 'name' => 'Roger', 'email' => 'roger@doe.com'],
+//        ['id' => 4, 'name' => 'Kate', 'email' => 'kate@doe.com'],
+//        ['id' => 5, 'name' => 'Dillan', 'email' => 'dillan@doe.com'],
+//    ];
+//    function cmp($a, $b): int
+//    {
+//        if ($a['email'] == $b['email']) {
+//            return 0;
+//        }
+//        return ($a['email'] > $b['email']) ? -1 : 1;
+//    }
+//
+//
+//    usort($users7, "cmp");
+//
+//    foreach ($users7 as $key => $value) {
+////        echo $value['email'].PHP_EOL;
+//        echo "$key: " . $value["email"] . "\n";
+//    }
 //}
-echo "Hello command.php\n";
-$varible = "Hi\n";
-echo "hello $varible";
-var_dump($varible);
-echo 'hello2' . $varible;
-PHP_INT_MAX;
-//echo PHP_INT_MAX;
-$js = isset($varible);
-var_dump($js);
-unset($js);
-var_dump($js);
-$integ = '4';
-$integ = (int)'4';
-var_dump($integ);
-$num2 = intval('4');
-var_dump($num2);
-$a = 5;
-$a = $a +7;
-$b = $a;
-$a = $a + 1;
+//
+//getUsers7($users7);
 
-//echo "$a\n";
-echo $a . "\n";
-echo $b . PHP_EOL;
+//$users9 = [5,9,6,4,8,6,3,7,5,1,0,8,5,3,57,42,64,6,8];
+//function getUsers7(&$users9): void
+//{
+//
+//    function cmp($a, $b): int
+//    {
+//        if ($a == $b) {
+//            return 0;
+//        }
+//        return ($a < $b) ? -1 : 1;
+//    }
+//
+//
+//    usort($users9, "cmp");
+//
+////    foreach ($users9 as $key => $value) {
+//////        echo $value['email'].PHP_EOL;
+////        echo "$key: " . $value["email"] . "\n";
+////    }
+//}
+//
+//getUsers7($users9);
+//print_r($users9);
 
-$text = 'red';
-$text .= 'blue';
-$text = $text . 'blue';
-echo $text . PHP_EOL;
-$r = fgets(STDIN);
-echo $r;
-echo $r;
+//$users10 = [5,9,6,4,8,6,3,7,5,1,0,8,5,3,57,42,64,6,8];
+//$result7 = max($users10);
+//
+//echo ($result7).PHP_EOL;
+
+function randArray(int $length = 10, int $min = 1, int $max = 10): array
+{
+    $array = [];
+    for ($i = 0; $i < $length; $i++) {
+        $array[] = rand($min, $max);
+    }
+    return $array;
+}
+
+$myArray = randArray();
+$intArray = count($myArray);
+print_r($myArray);
+
+//---------------------------------------------------------------------------------------------------------------------------------
+
+function sortMax(array $a): int
+{
+    return max($a);
+}
+$resultMax = sortMax($myArray);
+echo $resultMax.PHP_EOL;
+//---------------------------------------------------------------------------------------------------------------------------------
+function sortMin(array $a): int
+{
+    return min($a);
+}
+$resultMax = sortMin($myArray);
+echo $resultMax.PHP_EOL;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//function numberSort(&$sort): void
+//{
+//    function cmp($a, $b): int
+//    {
+//        if ($a == $b) {
+//            return 0;
+//        }
+//        return ($a < $b) ? -1 : 1;
+//    }
+//
+//  usort($sort, "cmp");
+//
+//}
+//
+//numberSort($myArray);
+//print_r($myArray);
+//-----------------------------------------------------------------------------------------------------------------------------------
+
+function numberSort($a): array
+{
+    function cmp($a, $b): int
+    {
+        if ($a == $b) {
+            return 0;
+        }
+        return ($a < $b) ? -1 : 1;
+    }
+    $a = [];
+
+ return usort($a, "cmp");
+
+}
+
+$res = numberSort($myArray);
+print_r($res);
