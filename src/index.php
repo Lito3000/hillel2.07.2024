@@ -1,2 +1,3 @@
 <?php
-echo "Hello World!";
+$r = fgets(STDIN);
+echo $r;
