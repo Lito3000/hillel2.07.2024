@@ -1,11 +1,17 @@
 <?php
-function fibo($i) {
-    if ($i == 0 ) return 0;
-    if ($i == 1 || $i == 2) {
-        return 1;
-    } else {
-        return fibo($i - 1) + fibo($i -2);
+function fibanachi($number):Generator
+{
+    $cur = 1;
+    $prev = 0;
+    for ($i = 0; $i < $number; $i++) {
+        yield $cur;
+
+        $temp = $cur;
+        $cur = $prev + $cur;
+        $prev = $temp;
     }
 }
-$res = fibo(30);
-echo $res;
+
+foreach (fibanachi(9) as $key => $fib) {
+    echo $key . ' => ' . $fib . "\n";
+}
