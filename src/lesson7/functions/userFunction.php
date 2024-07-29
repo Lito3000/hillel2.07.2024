@@ -10,7 +10,7 @@ function lastOpen1($file): string
 
 }
 
-function lastOpen2(string $file):string
+function lastOpen2(string $file): string
 {
     $fileOpen = fopen($file, 'r');
     $lastfile = fread($fileOpen, filesize('test.txt'));
