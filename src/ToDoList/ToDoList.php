@@ -7,7 +7,7 @@ class ToDoList
     public function __set($name, $value)
     {
 
-            $this->ark[$name]= $value;//в массив $task сохрани свойство name
+            $this->ark[$name]= $value;//в массив $ark сохрани свойство name
 
 //            file_put_contents($fileName,$line,$append ? FILE_APPEND : 0);
 

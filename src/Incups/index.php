@@ -9,12 +9,16 @@ $cases = FileType::cases();
 
 try {
     $file = new File('test.txt');
-    $file->write('Go to sweem'.PHP_EOL);
+//    $task2 = [uniqid(),'Go to play footbol',10];
+    $task1 = ['Go to play sweem',4];
+//    $file->write(json_encode($task1).PHP_EOL);
+    $file->addTaskUser($task1);
 //    $lines = $file->getLines();
 //    print_r($lines);
 //    echo $file->getLastLine();
 //    $file->setPath('test222.txt');
-
+   $sd =  $file->arr;
+print_r($sd);
 //    echo $file->getPath();
 } catch (Exception $exception) {
     echo $exception->getMessage() . PHP_EOL;
