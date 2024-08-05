@@ -3,7 +3,7 @@
 class File
 {
     private string $path;
-    public array $arr = [];
+    public array $tasks = [];
 
     /**
      * @throws Exception
@@ -80,8 +80,11 @@ class File
         if ($lines === false) {
             throw new Exception("Error writing to line");
         }
+        array_walk($lines, function (&$item) {
+            $item = json_decode($item,true);
+        });
 //        print_r($lines);
-        $this->arr = $lines;
+        $this->tasks = $lines;
 //        return $lines;
     }
 
@@ -96,19 +99,31 @@ class File
 ////        return end($lines);
 //    }
 
-    public function addTaskUser(array $array1): void
+    public function addTask(array $array1): void
     {
-//       $array1;
-        foreach ($array1 as $kay =>&$user){
-    $user[$kay]=uniqid();
-}
-//        $newArr= uniqid();
+        $newArr = [uniqid()];
+        $generalTask = array_merge($newArr, $array1);
+//        foreach ($array1 as $kay =>&$user){
+//    $user[$kay]=uniqid();
+//}
+
 //        print_r($task2);
 //       $array1=array_push( $array1,$newArr);
 //        $array1;
 //
-        $this->write(json_encode($array1) . PHP_EOL);
+        $this->write(json_encode($generalTask) . PHP_EOL);
 
 
     }
+
 }
+//function f1($number):array
+//{
+//    $fib2 =[];
+//    foreach ($number as $fib) {
+//        $fib2[] = $fib ;
+//    }
+//    return $fib2;
+//}
+//$r = f1($res);
+//print_r($r);
