@@ -36,17 +36,7 @@ class Track_TraKer
 
 
     }
-  public  function usersImportText(string $file): array|false//получение юзера с файла --------------------------------------
-    {
-        if (file_exists('../' . $file)) {
-            return false;
-        }
-        $users = file($file, FILE_IGNORE_NEW_LINES);
-        array_walk($users, function (&$user) {
-            $user = json_decode($user, true);
-        });
-        return $users;
-    }
+
 
     public function getLines(): void
     {
@@ -57,63 +47,54 @@ class Track_TraKer
         });
         $this->tasks = $lines;
     }
-//  public  function updateTextFile(int $id, array $values, string $file = 'users.txt'): bool
-//    {
-//        $users = $this->usersImportText($this->path);//берем массив с юзерами и перебираем
-//        if (!$users){
-//            return false;
-//        }
-//
-//        foreach ($users as $keyUser => $user) {
-//            if ($user['id'] === $id) {
-//                foreach ($values as $key => $value) {//['email'=>'katedoe@i.com']
-//                    $users[$keyUser][$key] = $value;//'email' = 'katedoe@i.com' записали в 'email' именно того ключа
-//                }
-//            }
-//        }
-//        return  usersRewrite($users,$file);
-//
-//    }
+
 
     /**
      * @throws Exception
      */
-    public function delete(int $id ): void
+    public function delete(string $id ): void
    {
-//       echo $id;
 
-//        $users = $this->getLines();//берем массив с юзерами и перебираем
        $users = file($this->path);
 
        array_walk($users, function (&$item) {
            $item = json_decode($item, true);
        });
 
-//print_r($users);
 
         foreach ($users as $keyUser => $user) {
+//           echo  $user[$keyUser];
+            foreach ($user as $key =>$task) {
+//                echo $key;
+//                foreach ($task as $keyTask => $task3) {
+//                    echo $task3[$keyTask];
+//                }
 
-
-
-            if ($keyUser === $id) {
-                echo 4334;
-                unset($users[$keyUser]);
-//                print_r($user);
+//                print_r($task[$key][$id]);
+//                print_r($task[$id]);
+                if ($task === $id) {
+                    echo 555;
+//                    exit;
+//                    unset($task[$key]);
+                    unset($users[$keyUser]);
+                }
             }
+
+
         }
-print_r($users);
-        $this->usersRewrite($users,$this->path);
+
+        $this->usersRewrite($users);
     }
 
 
     /**
      * @throws Exception
      */
-    public  function usersRewrite(array $users, string $file = 'textFile.txt'): void
+    public  function usersRewrite(array $users): void
     {
         array_walk($users, function (&$user) {
             $user = json_encode($user);
         });
-        $this->write(implode(PHP_EOL,$users),$file);
+        $this->write(implode(PHP_EOL,$users),false);
     }
 }
