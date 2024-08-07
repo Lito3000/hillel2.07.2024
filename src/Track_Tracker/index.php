@@ -10,7 +10,9 @@ $task1 = ['Go to play sweem', 4];
 
 try {
 //    $file->addTask($task2);
-    $file->delete('66b1073b30267');
+//    $file->delete('66b366416fa05');
+//    $file->getTasks();
+    $file->completeTask("66b390c5ae6e8");
 } catch (Exception $e) {
 }
 //try {

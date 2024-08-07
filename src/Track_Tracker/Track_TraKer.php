@@ -60,37 +60,64 @@ class Track_TraKer
        array_walk($users, function (&$item) {
            $item = json_decode($item, true);
        });
-
-
         foreach ($users as $keyUser => $user) {
-//           echo  $user[$keyUser];
-            foreach ($user as $key =>$task) {
-//                echo $key;
-//                foreach ($task as $keyTask => $task3) {
-//                    echo $task3[$keyTask];
-//                }
-
-//                print_r($task[$key][$id]);
-//                print_r($task[$id]);
-                if ($task === $id) {
-                    echo 555;
-//                    exit;
-//                    unset($task[$key]);
+            foreach ($user as $task) {
+               if ($task === $id) {
                     unset($users[$keyUser]);
                 }
             }
-
-
         }
-
-        $this->usersRewrite($users);
-    }
-
+        $this->usersUpdate($users);
+   }
 
     /**
      * @throws Exception
      */
-    public  function usersRewrite(array $users): void
+    public function getTasks(): void
+    {
+
+        $users = file($this->path);
+
+        array_walk($users, function (&$item) {
+            $item = json_decode($item, true);
+        });
+
+        function cmp($a, $b): int
+        {
+            if ($a[2] == $b[2]) {
+                return 0;
+            }
+            return ($a[2] < $b[2]) ? -1 : 1;
+        }
+        usort($users, "cmp");
+
+        $this->usersUpdate($users);
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function completeTask(string $id ): void
+    {
+
+        $users = file($this->path);
+
+        array_walk($users, function (&$item) {
+            $item = json_decode($item, true);
+        });
+        foreach ($users as $keyUser => $user) {
+            foreach ($user as $task) {
+                if ($task === $id) {
+                    $users[$keyUser][]= 'checked';
+                }
+            }
+        }
+        $this->usersUpdate($users);
+    }
+    /**
+     * @throws Exception
+     */
+    public  function usersUpdate(array $users): void
     {
         array_walk($users, function (&$user) {
             $user = json_encode($user);
