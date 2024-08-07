@@ -130,10 +130,8 @@ class TrackTraKer
             $item = json_decode($item, true);
         });
         foreach ($users as $keyUser => $user) {
-            foreach ($user as $task) {
-                if ($task === $id) {
-                    $users[$keyUser][] = 'checked';
-                }
+            if ($user[0] === $id) {
+                $users[$keyUser][] = 'checked';
             }
         }
         $this->usersUpdate($users);
