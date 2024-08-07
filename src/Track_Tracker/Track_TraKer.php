@@ -100,13 +100,7 @@ class TrackTraKer
         array_walk($users, function (&$item) {
             $item = json_decode($item, true);
         });
-//        foreach ($users as $keyUser => $user) {
-//            foreach ($user as $task) {
-//                if ($task === $id) {
-//                    unset($users[$keyUser]);
-//                }
-//            }
-//        }
+
         foreach ($users as $keyUser => $user) {
             if ($user[0] === $id) {
                     unset($users[$keyUser]);
