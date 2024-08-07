@@ -14,6 +14,7 @@ try {
 //    $file->getTasks();
 //    $file->completeTask("66b390c5ae6e8");
 } catch (Exception $e) {
+    echo $e->getMessage();
 }
 //try {
 ////    $file->delete('1');
