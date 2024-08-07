@@ -1,4 +1,2 @@
-["66b390c7c586d","Go to play footbol",5]
-["66b390c5ae6e8","Go to play footbol",10,"checked"]
-["66b390c6b085c","Go to play footbol",17]
+["66b390c6b085c","Go to play footbol",5]
 ["66b390c84006a","Go to play footbol",50]
